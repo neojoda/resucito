@@ -1,6 +1,6 @@
 Resucito
 ========
-Requiriments: CakePhph 2.4.3
+Requiriments: CakePHP 2.4.3
 
 Installation
 ------------
