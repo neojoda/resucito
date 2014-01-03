@@ -19,18 +19,20 @@ class Song extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'language' => array(
-			'alphaNumeric' => array(
-				'rule' => array('alphaNumeric'),
-				'required' => true,
-				'allowEmpty' => false
-			),
-		),
 		'title' => array(
-			'blank' => array(
+			'required' => array(
+				'rule' => array('minLength', 1),
 				'required' => true,
-				'allowEmpty' => false,
+			),
+			'notEmpty' => array(
+				'rule' => 'notEmpty',
+			    'message' => 'The field cannot be empty or only contains white spaces'
+			)
+		),
+		'language' => array(
+			'enumLanguage' => array(
 				'rule' => array('inList', array('es', 'en')),
+		        'message' => 'Values accepted: es or en'
 			),
 		)
 	);
